@@ -19,12 +19,43 @@ function encriptarTexto() {
                                    .replace(/i/gi, "imes")
                                    .replace(/a/gi, "ai")
                                    .replace(/o/gi, "ober")
-                                .replace(/u/gi, "ufat");
+                                   .replace(/u/gi, "ufat");
 
         document.getElementById('texto-resultado').textContent = textoCifrado;
         document.getElementById('texto-inicial').value;
+
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 1000,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+        Toast.fire({
+            icon: "success",
+            title: "Texto encriptado",
+        });
     }
-    
+    else{ 
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 1000,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+        Toast.fire({
+            icon: "warning",
+            title: "Primero ingresa un texto para encriptar",
+        });
+    }
+
     return;
 }
 
@@ -32,7 +63,7 @@ function desencriptarTexto() {
 
     textoInicial = document.getElementById('texto-inicial').value.trim().toLowerCase().replace(/[^a-z]/g, '');
 
-    if (textoInicial.trim()!=""){
+    if (textoInicial.trim() != "") {
 
         document.getElementById('img').style.display = 'none';
         document.getElementById('T-r').style.display = 'none';
@@ -47,18 +78,65 @@ function desencriptarTexto() {
                                       .replace(/ober/gi, "o")
                                       .replace(/ufat/gi, "u");
 
-    document.getElementById('texto-resultado').textContent = textoResultante;
-    document.getElementById('texto-inicial').value;
+        document.getElementById('texto-resultado').textContent = textoResultante;
+        document.getElementById('texto-inicial').value;
+
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 1000,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+        Toast.fire({
+            icon: "success",
+            title: "Texto desencriptado",
+        });
     }
 
-   return;
+    else{
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 1000,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+        Toast.fire({
+            icon: "warning",
+            title: "Primero ingresa un texto para desencriptar",
+        });
+    }
+
+    return;
 }
 
 function copiarTexto() {
     textoResultante = document.getElementById('texto-resultado');
     navigator.clipboard.writeText(textoResultante.textContent);
 
-    return; 
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1000,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "info",
+        title: "Texto copiado en el porta papeles",
+      });
+
+    return;
 }
 
 function limpiar() {
@@ -70,7 +148,7 @@ function limpiar() {
     document.getElementById('T-r').style.display = 'block';
     document.getElementById('T-p').style.display = 'block';
     document.getElementById('btn-copiar').style.display = 'none';
-    document.getElementById('btn-limpiar').style.display = 'none';  
+    document.getElementById('btn-limpiar').style.display = 'none';
 }
 
 

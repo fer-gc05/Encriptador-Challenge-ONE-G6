@@ -235,12 +235,24 @@ footer {
     width: 100%;
     background-color: #F3F5FC;
     text-align: center;
+    padding: 10px;
+    display: flex;
     align-items: center;
 }
 
-footer a{
+footer a {
+    font-style: normal;
+    font-family: 'Courier New', Courier, monospace;
     text-decoration: none;
+    color: #0A3871; 
+    transition: color 0.3s ease; 
 }
+
+footer a:hover {
+    color: #5890D8; 
+    
+}
+
 
 
 
