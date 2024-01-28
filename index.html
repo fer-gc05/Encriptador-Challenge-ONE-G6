@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge</title>
+    <link rel="icon" href="assets/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="assets/logoAlura.svg" alt="Alura-logo">
+    </header>
+    <main>
+
+        <section class="area-1">
+            <textarea name="texto-inicial" id="texto-inicial" class="texto-inicial" cols="30" rows="10"
+                placeholder="Ingrese su texto aqui"></textarea>
+            <div class="condiciones">
+                <img src="assets/alerta.svg" alt="advertencia">
+                <p>Ingresar solo minisculas y sin acentos</p>
+            </div>
+            <div class="botonA1">
+                <button class="btn-encriptar" type="button" id="btn-encriptar" onclick="encriptarTexto();">Encriptar</button>
+                <button class="btn-desencriptar" type="button" onclick="desencriptarTexto();">Desencriptar</button>
+            </div>
+        </section>
+
+        <section class="area-2">
+            <div class="background">
+                <img src="assets/background.svg" alt="muñeco" id="img">
+            </div>
+            <div class="resultante" id="resultante">
+                <h3 id="T-r">Ningún mensaje fue <br> encontrado</h3>
+                <p id="T-p">Ingresa el texto que desees encriptar o <br> desencriptar.</p>
+            </div>
+            <div class="contenedor-resultado">
+                <textarea name="texto-resultado" class="texto-resultado" id="texto-resultado" cols="30" rows="10"></textarea>
+            </div>
+            <div class="botonA2">
+                <button class="btn-copiar" id="btn-copiar" type="button" onclick="copiarTexto();">Copiar</button>
+                <button class="btn-limpiar" id="btn-limpiar" type="button" onclick="limpiar();">Limpiar</button>
+            </div>
+        </section>
+        <footer>
+            <p>Coded by <a href="https://github.com/fer-gc05" target="_blank" class="user">@Fernando Gil</a> - Oracle One Next Education-G6. </p>
+        </footer>
+
+    </main>
+</body>
+<script src="main.js"></script>
+
+</html>
