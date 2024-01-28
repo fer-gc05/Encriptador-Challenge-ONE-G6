@@ -4,7 +4,7 @@ let textoResultante = '';
 
 function encriptarTexto() {
 
-    textoInicial = document.getElementById('texto-inicial').value.trim();
+    textoInicial = document.getElementById('texto-inicial').value.trim().toLowerCase().replace(/[^a-z]/g, '');
 
     if (textoInicial.trim() != "") {
 
@@ -16,10 +16,10 @@ function encriptarTexto() {
         document.getElementById('btn-limpiar').style.display = 'block';
 
         textoCifrado = textoInicial.replace(/e/gi, "enter")
-            .replace(/i/gi, "imes")
-            .replace(/a/gi, "ai")
-            .replace(/o/gi, "ober")
-            .replace(/u/gi, "ufat");
+                                   .replace(/i/gi, "imes")
+                                   .replace(/a/gi, "ai")
+                                   .replace(/o/gi, "ober")
+                                .replace(/u/gi, "ufat");
 
         document.getElementById('texto-resultado').textContent = textoCifrado;
         document.getElementById('texto-inicial').value;
@@ -30,7 +30,7 @@ function encriptarTexto() {
 
 function desencriptarTexto() {
 
-    textoInicial = document.getElementById('texto-inicial').value.trim();
+    textoInicial = document.getElementById('texto-inicial').value.trim().toLowerCase().replace(/[^a-z]/g, '');
 
     if (textoInicial.trim()!=""){
 
@@ -41,13 +41,11 @@ function desencriptarTexto() {
         document.getElementById('btn-copiar').style.display = 'block';
         document.getElementById('btn-limpiar').style.display = 'block';
 
-        textoInicial = document.getElementById('texto-inicial').value.trim();
-
         textoResultante = textoInicial.replace(/enter/gi, "e")
-                                  .replace(/imes/gi, "i")
-                                  .replace(/ai/gi, "a")
-                                  .replace(/ober/gi, "o")
-                                  .replace(/ufat/gi, "u");
+                                      .replace(/imes/gi, "i")
+                                      .replace(/ai/gi, "a")
+                                      .replace(/ober/gi, "o")
+                                      .replace(/ufat/gi, "u");
 
     document.getElementById('texto-resultado').textContent = textoResultante;
     document.getElementById('texto-inicial').value;
